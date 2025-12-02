@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "HeliosC";
+  src: url("../../fonts/heliosc.woff2") format("woff2"), url("../../fonts/fonts/heliosc.woff") format("woff"), url("../../fonts/fonts/heliosc.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "HeliosC", sans-serif;
+}
+
+.main {
+  background-color: #020415;
+  color: #fff;
+  padding: 100px 64px;
+}
+@media screen and (max-width: 1240px) {
+  .main {
+    padding: 70px 20px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .main {
+    padding: 45px 10.5px;
+  }
+}
+.main__wrapper {
+  width: 100%;
+  max-width: 1792px;
+  margin: 0 auto;
+}
+.main__title {
+  text-align: center;
+  max-width: 55%;
+  margin: 0 auto 40px;
+  font-size: clamp(1.75rem, 0.5rem + 2.6041666667vw, 3.625rem);
+  line-height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main__title {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .main__title {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main__title {
+    max-width: 100%;
+  }
+}
+.main__description {
+  text-align: center;
+  font-size: clamp(1rem, 0.0833333333rem + 1.9097222222vw, 2.375rem);
+  line-height: 100%;
+  max-width: 35%;
+  margin: 0 auto 40px;
+}
+@media screen and (max-width: 768px) {
+  .main__description {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .main__description {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main__description {
+    max-width: 100%;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+}
+@media screen and (max-width: 650px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.cards__item:nth-child(3n+1) {
+  grid-column: 2;
+}
+.cards__item:nth-child(3n+2) {
+  grid-column: 1;
+}
+.cards__item:nth-child(3n) {
+  grid-column: 3;
+}
+@media screen and (max-width: 650px) {
+  .cards__item {
+    width: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 26px;
+  width: 100%;
+  max-width: 597px;
+  height: 308px;
+  background: rgba(158, 152, 252, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1020px) {
+  .card {
+    height: 174px;
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .card {
+    max-width: none;
+    height: 140px;
+  }
+  .card:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(226.75deg, rgba(255, 255, 255, 0.5) 29.1%, rgba(255, 255, 255, 0.08) 91.85%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .card__link:hover > .card__icon {
+    color: #655bff;
+  }
+}
+.card__link::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #D9D9D9;
+  opacity: 20%;
+  z-index: 0;
+}
+@media screen and (max-width: 1020px) {
+  .card__link {
+    min-width: 32px;
+    height: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__link {
+    min-width: 20px;
+    height: 20px;
+  }
+}
+.card__icon {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  color: #fff;
+  opacity: 1;
+  transition: 0.5s;
+}
+@media screen and (max-width: 1020px) {
+  .card__icon {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__icon {
+    width: 10px;
+    min-width: 10px;
+    height: 10px;
+  }
+}
+.card__text {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  font-size: clamp(0.875rem, 0.4583333333rem + 0.8680555556vw, 1.5rem);
+  line-height: 120%;
+  margin-right: 32px;
+}
+@media screen and (max-width: 1020px) {
+  .card__text {
+    margin-right: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */
